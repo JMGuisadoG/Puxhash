@@ -9,6 +9,16 @@ namespace CryptoUtils
 {
     public static class CryptoStrings
     {
+        /// <summary>
+        ///     Computes the sha1 hash of a given array of bytes and converts it to a 
+        ///     lowercase hex string
+        /// </summary>
+        /// <param name="input">
+        ///     Array of bytes which is to be digested
+        /// </param>
+        /// <returns>
+        ///     The sha1 digest of the input array of bytes
+        /// </returns>
         public static string Sha1StringOf(byte[] input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
@@ -26,6 +36,16 @@ namespace CryptoUtils
             }
         }
 
+        /// <summary>
+        ///     Computes the md5 hash of a given array of bytes and converts it to a 
+        ///     lowercase hex string
+        /// </summary>
+        /// <param name="input">
+        ///     Array of bytes which is to be digested
+        /// </param>
+        /// <returns>
+        ///     The md5 digest of the input array of bytes
+        /// </returns>
         public static string Md5StringOf(byte[] input)
         {
             using (var md5 = MD5.Create())
