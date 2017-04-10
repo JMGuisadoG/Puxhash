@@ -108,7 +108,7 @@ namespace Puxhash.ViewModels
                 SolidColorBrush brush;
                 if (!String.IsNullOrEmpty(TextBoxSha1))
                 {
-                    brush = Md5.Equals(TextBoxSha1) ? Brushes.Green : Brushes.PaleVioletRed;
+                    brush = Sha1.Equals(TextBoxSha1) ? Brushes.Green : Brushes.PaleVioletRed;
                 }
                 else
                 {
