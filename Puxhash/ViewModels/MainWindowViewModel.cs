@@ -1,7 +1,7 @@
-﻿using CryptoUtils;
-using MSM.UI.Practices;
+﻿using MSM.UI.Practices;
 using System;
 using System.IO;
+using CryptoUtils;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,21 +34,21 @@ namespace Puxhash.ViewModels
             }
         }
 
-        public String Md5
+        public string Md5
         {
             get
             {
                 byte[] bytes = File.ReadAllBytes(FilePath);
-                return CryptoUtils.CryptoUtils.Md5StringOf(bytes);
+                return CryptoStrings.Md5StringOf(bytes);
             }
         }
 
-        public String Sha1
+        public string Sha1
         {
             get
             {
                 byte[] bytes = File.ReadAllBytes(FilePath);
-                return CryptoUtils.CryptoUtils.Sha1StringOf(bytes);
+                return CryptoStrings.Sha1StringOf(bytes);
             }
         }
 

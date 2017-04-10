@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CryptoUtils
 {
-    public class CryptoUtils
+    public static class CryptoStrings
     {
-        public static String Sha1StringOf(byte[] input)
+        public static string Sha1StringOf(byte[] input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
             {
@@ -26,7 +26,7 @@ namespace CryptoUtils
             }
         }
 
-        public static String Md5StringOf(byte[] input)
+        public static string Md5StringOf(byte[] input)
         {
             using (var md5 = MD5.Create())
             {
