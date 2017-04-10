@@ -22,17 +22,22 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.25*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <TextBlock Grid.Row="0" Text="MD5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1" Text="SHA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
+        <Border Background="{Binding Md5Background}" Grid.Row="0">
+            <TextBlock Background="Transparent" Text="MD5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </Border>
+
+        <Border Background="{Binding Sha1Background}" Grid.Row="1">
+            <TextBlock Background="Transparent" Text="SHA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </Border>
+        
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="{Binding Path=Md5, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-            <TextBox Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+            <TextBox Text="{Binding Path=TextBoxMd5, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center" ></TextBox>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
@@ -41,7 +46,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="{Binding Path=Sha1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-            <TextBox Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+            <TextBox Text="{Binding Path=TextBoxSha1, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
         </Grid>
 
         <Button Grid.Row="2" Content="Open file" Click="Button_Click"></Button>
