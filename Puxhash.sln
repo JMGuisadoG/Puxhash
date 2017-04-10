@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puxhash", "Puxhash\Puxhash.csproj", "{6F149F95-1164-42EB-A88B-BA4C6FFE9EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoUtils", "ClassLibrary1\CryptoUtils.csproj", "{02A39A2B-DE86-4C08-9717-D51F4F53CFB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoUtils", "CryptoUtils\CryptoUtils.csproj", "{02A39A2B-DE86-4C08-9717-D51F4F53CFB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

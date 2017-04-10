@@ -101,8 +101,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\CryptoUtils.csproj">
-      <Project>{02A39A2B-DE86-4C08-9717-D51F4F53CFB6}</Project>
+    <ProjectReference Include="..\CryptoUtils\CryptoUtils.csproj">
+      <Project>{02a39a2b-de86-4c08-9717-d51f4f53cfb6}</Project>
       <Name>CryptoUtils</Name>
     </ProjectReference>
   </ItemGroup>
