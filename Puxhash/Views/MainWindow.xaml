@@ -26,19 +26,22 @@
         <TextBlock Grid.Row="0" Text="MD5" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="1" Text="SHA1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="{Binding Path=Md5, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-            <TextBox></TextBox>
-            
-        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Path=Md5, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+        </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding Path=Sha1, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-            <TextBox Grid.Row="1"></TextBox>
+            <TextBlock Text="{Binding Path=Sha1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
         </Grid>
 
         <Button Grid.Row="2" Content="Open file" Click="Button_Click"></Button>
