@@ -49,7 +49,7 @@
             <TextBox Text="{Binding Path=TextBoxSha1, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" TextAlignment="Center" VerticalContentAlignment="Center"></TextBox>
         </Grid>
 
-        <Button Grid.Row="2" Content="Open file" Click="Button_Click"></Button>
-        <TextBlock Grid.Row="2" Grid.Column="1" Name="tb_FilePath" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Button Grid.Row="2" Content="Open file" Command="{Binding Path=OpenFileCommand}"></Button>
+        <TextBlock Grid.Row="2" Grid.Column="1" Name="tb_FilePath" Text="{Binding Path=FilePath}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
     </Grid>
 </Window>

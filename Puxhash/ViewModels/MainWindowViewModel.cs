@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using Microsoft.Win32;
+using Puxhash.Practices;
 
 namespace Puxhash.ViewModels
 {
@@ -118,8 +120,19 @@ namespace Puxhash.ViewModels
 
         #endregion
 
+        public RelayCommand OpenFileCommand { get; set; }
+        private void OpenFileCommand_Executed()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if(ofd.ShowDialog() == true)
+            {
+                FilePath = ofd.FileName;
+            }
+        }
+
         public MainWindowViewModel()
         {
+            OpenFileCommand = new RelayCommand(OpenFileCommand_Executed);
             FilePath = "input.epub";
         }
     }

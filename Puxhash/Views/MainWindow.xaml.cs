@@ -22,27 +22,9 @@ namespace Puxhash
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowViewModel vm;
-
         public MainWindow()
         {
             InitializeComponent();
-            vm = (MainWindowViewModel)DataContext;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            MainWindowViewModel vm = (MainWindowViewModel)DataContext;
-
-            ofd.ShowDialog();
-            String new_filepath = ofd.FileName;
-
-            tb_FilePath.Text = new_filepath;
-            vm.FilePath = new_filepath;
-
-            vm.NotifyPropertyChanged("Md5Background");
-            
         }
     }
 }
