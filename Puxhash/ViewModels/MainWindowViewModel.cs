@@ -43,8 +43,8 @@ namespace Puxhash.ViewModels
         {
             get
             {
-                byte[] bytes = File.ReadAllBytes(FilePath);
-                return CryptoStrings.Md5StringOf(bytes);
+                //byte[] bytes = File.ReadAllBytes(FilePath);
+                return CryptoStrings.Md5StringOf(File.OpenRead(FilePath));
             }
         }
 
@@ -52,8 +52,8 @@ namespace Puxhash.ViewModels
         {
             get
             {
-                byte[] bytes = File.ReadAllBytes(FilePath);
-                return CryptoStrings.Sha1StringOf(bytes);
+                //byte[] bytes = File.ReadAllBytes(FilePath);
+                return CryptoStrings.Sha1StringOf(File.OpenRead(FilePath));
             }
         }
 

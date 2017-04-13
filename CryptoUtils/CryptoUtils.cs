@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,6 +17,9 @@ namespace CryptoUtils
         /// <param name="input">
         ///     Array of bytes which is to be digested
         /// </param>
+        /// <remarks>
+        ///     To be used with small size files
+        /// </remarks>
         /// <returns>
         ///     The sha1 digest of the input array of bytes
         /// </returns>
@@ -43,6 +47,9 @@ namespace CryptoUtils
         /// <param name="input">
         ///     Array of bytes which is to be digested
         /// </param>
+        /// <remarks>
+        ///     To be used with small size files
+        /// </remarks>
         /// <returns>
         ///     The md5 digest of the input array of bytes
         /// </returns>
@@ -54,6 +61,39 @@ namespace CryptoUtils
                 var sb = new StringBuilder(hash_md5.Length * 2);
 
                 foreach (byte b in hash_md5)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+
+                return sb.ToString();
+            }
+        }
+
+        public static string Md5StringOf(Stream fileStream)
+        {
+            using (var md5 = MD5.Create())
+            {
+                var hash_md5 = md5.ComputeHash(fileStream);
+                var sb = new StringBuilder(hash_md5.Length * 2);
+
+                foreach (byte b in hash_md5)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+
+                return sb.ToString();
+            }
+        }
+
+
+        public static string Sha1StringOf(Stream fileStream)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash_sha1 = sha1.ComputeHash(fileStream);
+                var sb = new StringBuilder(hash_sha1.Length * 2);
+
+                foreach (byte b in hash_sha1)
                 {
                     sb.Append(b.ToString("x2"));
                 }
