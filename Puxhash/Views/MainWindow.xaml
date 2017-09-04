@@ -50,6 +50,10 @@
         </Grid>
 
         <Button Grid.Row="2" Content="Open file" Command="{Binding Path=OpenFileCommand}"></Button>
-        <TextBlock Grid.Row="2" Grid.Column="1" Name="tb_FilePath" Text="{Binding Path=FilePath}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1"
+                   Name="tb_FilePath" 
+                   Text="{Binding Path=FilePath}"
+                   FontFamily="Iosevka" FontSize="14"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" />
     </Grid>
 </Window>
